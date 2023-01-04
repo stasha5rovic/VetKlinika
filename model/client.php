@@ -2,12 +2,13 @@
 
 class Client extends User{
 
-    protected Chart $chart;
+    protected $listOfPets;
 
-    public function __construct($id, $name, $email, $password, $phone, $type, $chart)
+    public function __construct($id, $name, $email, $password, $phone, $type)
     {
         parent::__construct($id, $name, $email, $password, $phone, $type);
-        $this->chart = $chart;
+        $this->listOfPets = array();
+        
     }
 
     public function getId()
@@ -72,15 +73,16 @@ class Client extends User{
         $this->type = $type;
     }
 
-    public function getChart()
+    public function getListOfPets()
     {
-        return $this->chart;
+        return $this->listOfPets;
     }
 
-    public function setChart(Chart $chart)
+    public function setListOfPets($listOfPets)
     {
-        $this->chart = $chart;
+        $this->listOfPets = $listOfPets;
     }
+
 }
 
 

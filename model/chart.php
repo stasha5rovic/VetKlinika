@@ -1,63 +1,39 @@
 <?php
 
 class Chart{
-    protected int $id;
-    protected string $animalType;
-    protected string $animalName;
-    protected string $dob;
+    protected Animal $animal;
+    protected Client $client;
     protected $listOfVisits;
     protected $listOfMeds;
 
-    public function __construct($id, $animalType, $animalName, $dob)
+    public function __construct($animal, $client, $animalType, $animalName)
     {
-        $this->id = $id;
-        $this->animalType = $animalType;
-        $this->animalName = $animalName;
-        $this->dob = $dob;
+        $this->animal = $animal;
+        $this->client = $client;
         $this->listOfVisits = array();
         $this->listOfMeds = array();
     }
 
 
-    public function getId()
+    public function getAnimal()
     {
-        return $this->id;
+        return $this->animal;
     }
 
-    public function setId(int $id)
+    public function setAnimal($animal)
     {
-        $this->id = $id;
+        $this->animal = $animal;
     }
 
-    public function getAnimalType()
+    public function getClient()
     {
-        return $this->animalType;
+        return $this->client;
     }
 
-    public function setAnimalType(string $animalType)
+    public function setAnimalName($client)
     {
-        $this->animalType = $animalType;
-    }
+        $this->client = $client;
 
-    public function getAnimalName()
-    {
-        return $this->animalName;
-    }
-
-    public function setAnimalName(string $animalName)
-    {
-        $this->animalName = $animalName;
-
-    }
-
-    public function getDob()
-    {
-        return $this->dob;
-    }
-
-    public function setDob(string $dob)
-    {
-        $this->dob = $dob;
     }
 
     public function getListOfVisits()
