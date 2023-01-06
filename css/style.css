@@ -1,0 +1,32 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: blueviolet;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    padding: 1em;
+}
+
+div input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#glavniDiv{
+    display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#divForma{
+    padding: 1em 0em;
+    display: flex;
+	flex-direction: column;
+    flex-wrap: wrap;
+	justify-content: space-evenly;
+}
