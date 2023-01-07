@@ -1,39 +1,28 @@
 <?php
 
 class Chart{
-    protected Animal $animal;
-    protected Client $client;
+    protected int $animalID;
+    protected int $clientID;
     protected $listOfVisits;
-    protected $listOfMeds;
+    protected $nextCheckUp;
 
-    public function __construct($animal, $client, $animalType, $animalName)
+    public function __construct($animalID, $clientID)
     {
-        $this->animal = $animal;
-        $this->client = $client;
+        $this->animalID = $animalID;
+        $this->clientID = $clientID;
         $this->listOfVisits = array();
-        $this->listOfMeds = array();
+        
     }
 
 
-    public function getAnimal()
+    public function getAnimalID()
     {
-        return $this->animal;
+        return $this->animalID;
     }
 
-    public function setAnimal($animal)
+    public function getClientID()
     {
-        $this->animal = $animal;
-    }
-
-    public function getClient()
-    {
-        return $this->client;
-    }
-
-    public function setAnimalName($client)
-    {
-        $this->client = $client;
-
+        return $this->clientID;
     }
 
     public function getListOfVisits()
@@ -44,18 +33,21 @@ class Chart{
     public function setListOfVisits($listOfVisits)
     {
         $this->listOfVisits = $listOfVisits;
-
     }
 
-    public function getListOfMeds()
+    public function getNextCheckUp()
     {
-        return $this->listOfMeds;
+        return $this->nextCheckUp;
     }
 
-    public function setListOfMeds($listOfMeds)
+    public function setNextCheckUp($nextCheckUp)
     {
-        $this->listOfMeds = $listOfMeds;
+        $this->nextCheckUp = $nextCheckUp;
+
     }
+
+    
+
 }
 
 

@@ -6,20 +6,27 @@ if (isset($_POST["login"])) {
     foreach ($_SESSION["korisnici"] as $korisnik) {
         if ($korisnik->getEmail() == $_POST['email'] && $korisnik->getPassword() == $_POST['password']) {
             $_SESSION["logovani_korisnik"] = $korisnik;
-            //echo "Logovani korisnik: ".  $_SESSION["logovani_korisnik"] ->getName();
+            
             if ($_SESSION["logovani_korisnik"]->getType() == "employee") {
                 header("Location:view/eView.php");
+                include "view/header.php";
                 exit();
             } elseif ($_SESSION["logovani_korisnik"]->getType() == "client") {
                 header("Location:view/cView.php");
+                include "view/header.php";
                 exit();
             } elseif ($_SESSION["logovani_korisnik"]->getType() == "admin") {
                 header("Location:view/aView.php");
+                include "view/header.php";
                 exit();
             }
+                       
         }
+        
     }
 }
+
+//$user = $_SESSION["logovani_korisnik"];
 
 ?>
 
