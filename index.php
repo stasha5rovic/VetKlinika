@@ -1,5 +1,6 @@
 <?php
 include "data.php";
+include "list.php";
 
 if (isset($_POST["login"])) {
 
@@ -45,7 +46,30 @@ if (isset($_POST["login"])) {
     <header>
         <h1>Dobro došli u našu Vet Kliniku!</h1>
     </header>
+<div id="glavniDiv">
+    <div id="table_div">
+        <h3>Ovo su usluge koje nudimo:</h3>
+        <table border="2px"  id="tabela">
+            <thead>
+                <th></th>
+                <th>Naziv usluge</th>
+                <th>Cena</th>
+            </thead>
+            <tbody>
+                <?php
+                    foreach($listOfServices as $los):
+                ?>
+                <tr>
+                    <td><?php echo $los["id"];  ?></td>
+                    <td><?php echo $los["naziv"]; ?></td>
+                    <td><?php echo $los["cena"]; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 
+    <div>
     <h3>Imate nalog? Ulogujte se ovde:</h3>
     <div id="divForma">
         <form id="forma" method="post">
@@ -61,6 +85,8 @@ if (isset($_POST["login"])) {
             <input type="submit" value="Uloguj me!" id="login" name="login">
         </form>
     </div>
+    </div>
+</div>   
 </body>
 
 </html>
