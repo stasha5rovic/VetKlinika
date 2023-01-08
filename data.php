@@ -7,7 +7,6 @@ include_once "model/admin.php";
 include_once "model/client.php";
 include_once "model/employee.php";
 include_once "model/animal.php";
-include_once "model/chart.php";
 include_once "model/visit.php";
 
 
@@ -19,11 +18,16 @@ $e1 = new Employee(1, "Jean-Luc Picard", "picard@gmail.com", "picard123", "+4452
 $a1 = new Admin(2, "Ellen Ripley", "ripley@yahoo.com", "ripley123", "+38160251547", "admin");
 
 $pet1 = new Animal(1, "cat", "Spot", "19-07-2019", 4.2);
-$chart1 = new Chart(1, 3);
 
-$listOfPets = [];
-array_push($listOfPets, $pet1);
-$c1->setListOfPets($listOfPets);
+$v1 = new Visit(1, 3, "03-05-2022", "Regular check up", "none");
+$v2 = new Visit(1, 3, "21-12-2022", "Eye infection", "antibiotic cream");
+
+$listOfVisits = [];
+array_push($listOfVisits, $v1);
+array_push($listOfVisits, $v2);
+
+
+
 
 $nizKorisnika = [];
 

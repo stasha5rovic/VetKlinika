@@ -1,33 +1,41 @@
 <?php
 
 class Visit{
-    protected int $employeeID;
+    protected int $animalID;
+    protected int $clientID;
     protected $date;
     protected string $diagnosis;
-    protected $listOfMeds;
+    protected string $meds;
+    
 
-    public function __construct($employeeID, $date, $diagnosis)
+    public function __construct($animalID, $clientID, $date, $diagnosis, $meds)
     {
-        $this->employeeID = $employeeID;
+        $this->animalID = $animalID;
+        $this->clientID = $clientID;
         $this->date = $date;
         $this->diagnosis = $diagnosis;
-        $this->listOfMeds = array();
+        $this->meds = $meds;
     }
 
 
-    public function getListOfMeds()
+    public function getMeds()
     {
-        return $this->listOfMeds;
+        return $this->meds;
     }
 
-    public function setListOfMeds($listOfMeds)
+    public function setMeds($meds)
     {
-        $this->listOfMeds = $listOfMeds;
+        $this->meds = $meds;
     }
 
-    public function getEmployeeID()
+    public function getAnimalID()
     {
-        return $this->employeeID;
+        return $this->animalID;
+    }
+
+    public function getClientID()
+    {
+        return $this->clientID;
     }
 
     public function getDiagnosis()

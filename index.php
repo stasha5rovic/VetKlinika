@@ -8,15 +8,16 @@ if (isset($_POST["login"])) {
         if ($korisnik->getEmail() == $_POST['email'] && $korisnik->getPassword() == $_POST['password']) {
             $_SESSION["logovani_korisnik"] = $korisnik;
             
-            if ($_SESSION["logovani_korisnik"]->getType() == "employee") {
+            $user = $_SESSION["logovani_korisnik"];
+            if ($user->getType() == "employee") {
                 header("Location:view/eView.php");
                 include "view/header.php";
                 exit();
-            } elseif ($_SESSION["logovani_korisnik"]->getType() == "client") {
+            } elseif ($user->getType() == "client") {
                 header("Location:view/cView.php");
                 include "view/header.php";
                 exit();
-            } elseif ($_SESSION["logovani_korisnik"]->getType() == "admin") {
+            } elseif ($user->getType() == "admin") {
                 header("Location:view/aView.php");
                 include "view/header.php";
                 exit();
@@ -27,7 +28,7 @@ if (isset($_POST["login"])) {
     }
 }
 
-//$user = $_SESSION["logovani_korisnik"];
+
 
 ?>
 
@@ -49,7 +50,7 @@ if (isset($_POST["login"])) {
 <div id="glavniDiv">
     <div id="table_div">
         <h3>Ovo su usluge koje nudimo:</h3>
-        <table border="2px"  id="tabela">
+        <table border="2px">
             <thead>
                 <th></th>
                 <th>Naziv usluge</th>
@@ -81,7 +82,7 @@ if (isset($_POST["login"])) {
                 <label for="password">Vaša lozinka</label>
                 <input type="text" id="password" name="password" required>
             </div>
-            <br><br>
+            <br>
             <input type="submit" value="Uloguj me!" id="login" name="login">
         </form>
     </div>

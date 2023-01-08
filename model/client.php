@@ -2,12 +2,12 @@
 
 class Client extends User{
 
-    protected $listOfPets;
+    
 
     public function __construct($id, $name, $email, $password, $phone, $type)
     {
         parent::__construct($id, $name, $email, $password, $phone, $type);
-        $this->listOfPets = array();
+       
         
     }
 
@@ -73,15 +73,7 @@ class Client extends User{
         $this->type = $type;
     }
 
-    public function getListOfPets()
-    {
-        return $this->listOfPets;
-    }
 
-    public function setListOfPets($listOfPets)
-    {
-        $this->listOfPets = $listOfPets;
-    }
 
 }
 
