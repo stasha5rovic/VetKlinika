@@ -19,7 +19,7 @@ $a1 = new Admin(2, "Ellen Ripley", "ripley@yahoo.com", "ripley123", "+3816025154
 $c2 = new Client(4, "Kira Nerys", "kira@gmail.com", "kira123", "+38137854996", "client");
 
 $pet1 = new Animal(1, "mačka", "Spot", "19-07-2019", 4.2);
-$pet2 = new Animal(2, "parrot", "Odo", "25-05-2015", 1.4);
+$pet2 = new Animal(2, "papagaj", "Odo", "25-05-2015", 1.4);
 
 $v1 = new Visit(1, 3, "03-05-2022", "Redovna kontrola", "nema");
 $v2 = new Visit(1, 3, "21-12-2022", "Upala desnog oka", "antibiotska krema");
@@ -39,11 +39,17 @@ array_push($nizKorisnika, $e1);
 array_push($nizKorisnika, $a1);
 array_push($nizKorisnika, $c1);
 
+$nizPacijenata = [];
+array_push($nizPacijenata, $pet1);
+array_push($nizPacijenata, $pet2);
+
 
 
 $_SESSION["korisnici"] = $nizKorisnika;
 
-$_SESSION["visits"] = $listOfVisits;
+$_SESSION["posete"] = $listOfVisits;
+
+$_SESSION["pacijenti"] = $nizPacijenata;
 
 
 

@@ -4,11 +4,11 @@ include_once "header.php";
 
 
 
-echo "Ovo je strana za klijente." . "<br>";
+
 
 echo "<br>";
 
-$visits = $_SESSION["visits"];
+$visits = $_SESSION["posete"];
 
 $myVisits = [];
 
@@ -32,6 +32,7 @@ for ($i = 0; $i < count($visits); $i++){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strana za klijente</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
