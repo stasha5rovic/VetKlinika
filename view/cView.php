@@ -12,11 +12,17 @@ $visits = $_SESSION["visits"];
 
 $myVisits = [];
 
-foreach($visits as $vis){
-    if($vis->getClientID() == $user->getId()){
-        array_push($myVisits, $vis);
+$korisnici = $_SESSION["korisnici"];
+
+for ($i = 0; $i < count($visits); $i++){
+    for ($j = 0; $j < count($korisnici); $j++){
+        if($visits[$i]->getClientID() == $korisnici[$j]->getId()){
+                    array_push($myVisits, $visits[$i]);
+                }
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -39,12 +45,12 @@ foreach($visits as $vis){
             </thead>
             <tbody>
                 <?php
-                    foreach($listOfVisits as $lov):
+                    foreach($myVisits as $mv):
                 ?>
                 <tr>
-                    <td><?php echo $lov->getDate();  ?></td>
-                    <td><?php echo $lov->getDiagnosis(); ?></td>
-                    <td><?php echo $lov->getMeds(); ?></td>
+                    <td><?php echo $mv->getDate();  ?></td>
+                    <td><?php echo $mv->getDiagnosis(); ?></td>
+                    <td><?php echo $mv->getMeds(); ?></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
