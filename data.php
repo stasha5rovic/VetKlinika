@@ -39,6 +39,8 @@ array_push($nizKorisnika, $c1);
 
 $_SESSION["korisnici"] = $nizKorisnika;
 
+$_SESSION["visits"] = $listOfVisits;
+
 
 
 

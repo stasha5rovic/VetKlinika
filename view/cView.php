@@ -8,7 +8,7 @@ echo "Ovo je strana za klijente." . "<br>";
 
 echo "<br>";
 
-$visits = $listOfVisits;
+$visits = $_SESSION["visits"];
 
 $myVisits = [];
 
