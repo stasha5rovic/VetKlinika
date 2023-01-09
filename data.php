@@ -17,10 +17,10 @@ $c1 = new Client(3, "Jadzia Dax", "dax@hotmail.com", "dax123", "+38161222964", "
 $e1 = new Employee(1, "Jean-Luc Picard", "picard@gmail.com", "picard123", "+445215878", "employee", "doctor");
 $a1 = new Admin(2, "Ellen Ripley", "ripley@yahoo.com", "ripley123", "+38160251547", "admin");
 
-$pet1 = new Animal(1, "cat", "Spot", "19-07-2019", 4.2);
+$pet1 = new Animal(1, "mačka", "Spot", "19-07-2019", 4.2);
 
-$v1 = new Visit(1, 3, "03-05-2022", "Regular check up", "none");
-$v2 = new Visit(1, 3, "21-12-2022", "Eye infection", "antibiotic cream");
+$v1 = new Visit(1, 3, "03-05-2022", "Redovna kontrola", "nema");
+$v2 = new Visit(1, 3, "21-12-2022", "Upala desnog oka", "antibiotska krema");
 
 $listOfVisits = [];
 array_push($listOfVisits, $v1);

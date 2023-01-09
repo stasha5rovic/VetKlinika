@@ -8,15 +8,15 @@ echo "Ovo je strana za klijente." . "<br>";
 
 echo "<br>";
 
-// $visits = $listOfVisits;
+$visits = $listOfVisits;
 
-// $myVisits = [];
+$myVisits = [];
 
-// foreach($visits as $vis){
-//     if($vis->getClientID() == $user->getId()){
-//         array_push($myVisits, $vis);
-//     }
-// }
+foreach($visits as $vis){
+    if($vis->getClientID() == $user->getId()){
+        array_push($myVisits, $vis);
+    }
+}
 ?>
 
 <!DOCTYPE html>

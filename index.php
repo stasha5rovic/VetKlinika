@@ -1,6 +1,7 @@
 <?php
 include "data.php";
 include "list.php";
+//include "view/cView.php";
 
 if (isset($_POST["login"])) {
 
@@ -23,7 +24,11 @@ if (isset($_POST["login"])) {
                 exit();
             }
                        
-        }
+        } 
+        //else {
+            // echo "Uneli ste pogrešnu email adresu ili šifru, pokušajte ponovo.";
+            // break;
+        //}
         
     }
 }
