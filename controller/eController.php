@@ -12,7 +12,7 @@ class eController{
                 echo "ID: " . $korisnik->getId() . " / " . "Ime: " . $korisnik->getName() . " / " . 
                 "Email: " . $korisnik->getEmail() . " / " . "Telefon: ". $korisnik->getPhone();
                 echo "<br>";
-                echo "Posete ovog klijenta: . <br>";
+                echo "Posete ovog klijenta:  <br>";
                 foreach ($_SESSION["posete"] as $pos){
                     if ($korisnik->getId() == $pos->getClientID()){
                         echo "Datum: " .$pos->getDate() . " / " . "Dijagnoza: ". $pos->getDiagnosis() . " / " . "Terapija: " . $pos->getMeds() . "<br>";
@@ -31,7 +31,7 @@ class eController{
                 "Vrsta: " . $pacijent->getAnimalType() . " / " . "Datum rođenja: " . $pacijent->getDob() . " / " .
                  "Težina: " . $pacijent->getWeight() . " kg";
                  echo "<br>";
-                echo "Posete ovog pacijenta: . <br>";
+                echo "Posete ovog pacijenta:  <br>";
                 foreach ($_SESSION["posete"] as $pos){
                     if ($pacijent->getId() == $pos->getAnimalID()){
                         echo "Datum: " .$pos->getDate() . " / " . "Dijagnoza: ". $pos->getDiagnosis() . " / " . "Terapija: " . $pos->getMeds() . "<br>";
@@ -41,7 +41,7 @@ class eController{
 }
 }
 
-    public static function calculateNextVisit(){
+    public static function scheduleNextVisit($date, $noOfDays){
         
     }
 

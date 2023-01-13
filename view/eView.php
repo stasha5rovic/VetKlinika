@@ -65,10 +65,44 @@ include "../controller/eController.php";
 
             ?>
         </div>
+        <div>
+            <h3>Zakazivanje kontrole:</h3>
+            <form method="post">
+                <div>
+                    <label for="petID">Unesite ID pacijenta</label>
+                    <input type="text" id="petID" name="petID" required>
+                </div>
+                <div>
+                    <label for="days">Dana do kontrole</label>
+                    <input type="number" min="1" max="30" id="days" name="days" required>
+                    </div>
+                    <br>
+                    <input type="submit" value="Zakaži" id="schedule" name="schedule">
+            </div> 
+            </form>
+            <br><br>
+        </div>
+        <?php
 
+        $visits = $_SESSION["posete"];
+
+        if (isset($_POST["schedule"])) {
+            $noOfDays = $_POST["days"];
+            $listOfVisits = [];
+            foreach ($visits as $vis) {
+                if ($vis->getAnimalID() == $_POST['petID']) {
+                    array_push($listOfVisits);
+                }
+            }
+            $key = array_key_last($listOfVisits);
+            $lastVisit = $listOfVisits[$key]->getDate();
+            echo $lastVisit;
+            //eController::scheduleNextVisit($date, $noOfDays);
+        }
+
+        ?>
     </div>
 
 </body>
 
 </html>
-

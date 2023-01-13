@@ -1,7 +1,8 @@
 <?php
 include "data.php";
 include "list.php";
-//include "view/cView.php";
+
+
 
 if (isset($_POST["login"])) {
 
@@ -12,25 +13,20 @@ if (isset($_POST["login"])) {
             $user = $_SESSION["logovani_korisnik"];
             if ($user->getType() == "employee") {
                 header("Location:view/eView.php");
-                include "view/header.php";
                 exit();
             } elseif ($user->getType() == "client") {
                 header("Location:view/cView.php");
-                include "view/header.php";
                 exit();
             } elseif ($user->getType() == "admin") {
                 header("Location:view/aView.php");
-                include "view/header.php";
                 exit();
             }
                        
-        } 
-        //else {
-            // echo "Uneli ste pogrešnu email adresu ili šifru, pokušajte ponovo.";
-            // break;
-        //}
         
-    }
+        
+        }
+        
+   }
 }
 
 
@@ -76,7 +72,7 @@ if (isset($_POST["login"])) {
     </div>
 
     <div>
-    <h3>Imate nalog? Ulogujte se ovde:</h3>
+    <h3>Imate nalog? Ulogujte se ovde: </h3>
     <div id="divForma">
         <form id="forma" method="post">
             <div>

@@ -1,16 +1,20 @@
 <?php
+
 include_once "../data.php";
 include_once "header.php";
-
-
-
-
 
 echo "<br>";
 
 $visits = $_SESSION["posete"];
 
 $myVisits = [];
+
+// foreach($visits as $vis){
+//     global $user;
+//     if($vis->getClientID() == $user->getId()){
+//         array_push($myVisits, $vis);
+//     }
+// }
 
 $korisnici = $_SESSION["korisnici"];
 
