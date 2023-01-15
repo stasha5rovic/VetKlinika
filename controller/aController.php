@@ -16,7 +16,14 @@ class aController{
             "type" => $type);
             $_SESSION["korisnici"][] = $korisnik;
             //array_push($_SESSION["korisnici"][], $korisnik);
-            }
+
+            //provera
+            // foreach($_SESSION["korisnici"] as $kor){
+            //     print_r($kor);
+            // }
+
+
+    }
 
         
             

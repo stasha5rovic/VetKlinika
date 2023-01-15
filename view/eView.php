@@ -93,6 +93,49 @@ include_once "../model/visit.php";
         }
 
         ?>
+
+        <div>
+            <h3>Nova poseta:</h3>
+            <div>
+                <form method="post">
+                    <div>
+                        <label for="idA">ID pacijenta</label>
+                        <input type="text" id="idA" name="idA" required>
+                    </div>
+                    <div>
+                        <label for="idC">ID klijenta</label>
+                        <input type="text" id="idC" name="idC" required>
+                    </div>
+                    <div>
+                        <label for="datum">Datum</label>
+                        <input type="date" id="datum" name="datum" placeholder="dd-mm-YYYY" required>
+                    </div>
+                    <div>
+                        <label for="diagnosis">Dijagnoza</label>
+                        <input type="text" id="diagnosis" name="diagnosis" required>
+                    </div>
+                    <div>
+                        <label for="meds">Terapija</label>
+                        <input type="text" id="meds" name="meds" required>
+                    </div>
+            </div>
+            <br>
+            <input type="submit" value="Zapamti" id="zapamti" name="zapamti">
+            </form>
+            <br><br>
+            <?php
+
+            if (isset($_POST["zapamti"])) {
+                $idA = $_POST["idA"];
+                $idC = $_POST["idC"];
+                $datum = date('d-m-Y', strtotime($_POST["datum"]));
+                $diagnosis = $_POST["diagnosis"];
+                $meds = $_POST["meds"];
+                
+                eController::addVisit($idA ,$idC, $datum, $diagnosis, $meds);
+            }
+            ?>
+        </div>
     </div>
 
 </body>

@@ -62,6 +62,18 @@ class eController{
             }
     }
 
+    public static function addVisit($idA, $idC, $datum, $diagnosis, $meds){
+            $poseta = array(
+            "animalID" => $idA,
+            "clientID" => $idC,
+            "date" => $datum,
+            "diagnosis" => $diagnosis,
+            "meds" => $meds,
+            );
+
+            $_SESSION["posete"][] = $poseta;
+    }
+
 }
 
 

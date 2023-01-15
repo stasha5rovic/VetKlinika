@@ -20,6 +20,7 @@ $korisnici = $_SESSION["korisnici"];
 </head>
 <body>
 <div id="glavniDiv">
+
 <div id="table_div">
         <h3>Lista svih korisnika:</h3>
         <table border="2px">
@@ -48,8 +49,7 @@ $korisnici = $_SESSION["korisnici"];
         </table>
     </div>
 
-
-        <div>
+    <div>
             <h3>Unos novog korisnika:</h3>
             <div>
                 <form method="post">
@@ -95,6 +95,9 @@ $korisnici = $_SESSION["korisnici"];
             }
             ?>
         </div>
+
+
+
 </div>
 </body>
 </html>
