@@ -23,13 +23,16 @@ class aController{
             // }
 
 
-    }
-
-        
-            
+    }            
     
 
-    public static function deleteUser(){
+    public static function deleteUser($deleteId){
+
+        foreach($_SESSION["korisnici"] as $kor){
+            if($kor->getId() == $deleteId){
+                unset($kor);
+            }
+        }
 
     }
 

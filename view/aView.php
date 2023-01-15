@@ -16,7 +16,7 @@ $korisnici = $_SESSION["korisnici"];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin strana</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleAdminEmployee.css">
 </head>
 <body>
 <div id="glavniDiv">
@@ -96,6 +96,27 @@ $korisnici = $_SESSION["korisnici"];
             ?>
         </div>
 
+        <div>
+            <h3>Brisanje korisnika</h3>
+            <div>
+                <form method="post">
+                    <div>
+                        <label for="deleteId">ID korisnika</label>
+                        <input type="text" id="deleteId" name="deleteId" required>
+                    </div>
+                    <br>
+            <input type="submit" value="Obriši" id="delete" name="delete">
+            </form>
+            <br><br>
+            <?php
+
+            if (isset($_POST["delete"])) {
+                $deleteId = $_POST["deleteId"];
+                aController::deleteUser($deleteId);
+            }
+            ?>
+        </div>
+        </div>
 
 
 </div>
