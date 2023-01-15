@@ -3,6 +3,7 @@
 include_once "../data.php";
 include_once "header.php";
 include "../controller/eController.php";
+include_once "../model/visit.php";
 
 
 
@@ -69,12 +70,12 @@ include "../controller/eController.php";
             <h3>Zakazivanje kontrole:</h3>
             <form method="post">
                 <div>
-                    <label for="petID">Unesite ID pacijenta</label>
-                    <input type="text" id="petID" name="petID" required>
+                    <label for="petID">Unesite ID klijenta</label>
+                    <input type="text" id="userID" name="userID" required>
                 </div>
                 <div>
-                    <label for="days">Dana do kontrole</label>
-                    <input type="number" min="1" max="30" id="days" name="days" required>
+                    <label for="scheduleDate">Datum kontrole</label>
+                    <input type="date" name="scheduleDate" id="scheduleDate">
                     </div>
                     <br>
                     <input type="submit" value="Zakaži" id="schedule" name="schedule">
@@ -84,20 +85,11 @@ include "../controller/eController.php";
         </div>
         <?php
 
-        $visits = $_SESSION["posete"];
-
         if (isset($_POST["schedule"])) {
-            $noOfDays = $_POST["days"];
-            $listOfVisits = [];
-            foreach ($visits as $vis) {
-                if ($vis->getAnimalID() == $_POST['petID']) {
-                    array_push($listOfVisits);
-                }
-            }
-            $key = array_key_last($listOfVisits);
-            $lastVisit = $listOfVisits[$key]->getDate();
-            echo $lastVisit;
-            //eController::scheduleNextVisit($date, $noOfDays);
+            $userID = $_POST["userID"];
+            $date = date('d-m-Y', strtotime($_POST["scheduleDate"]));
+            eController::scheduleNextVisit($date, $userID);
+            echo "Kontrola zakazana za: " . $date;
         }
 
         ?>

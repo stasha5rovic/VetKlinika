@@ -68,6 +68,7 @@ class Animal{
     {
         $this->animalType = $animalType;
     }
+ 
 }
 
 

@@ -56,6 +56,13 @@ class Visit{
     {
         $this->date = $date;
     }
+
+    public function __toString()
+    {
+        return $this->date;
+    }
+
+
 }
 
 

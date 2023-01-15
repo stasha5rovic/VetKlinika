@@ -1,4 +1,5 @@
 <?php
+include_once "../model/animal.php";
 
 $visits = $_SESSION["posete"];
 $korisnici = $_SESSION["korisnici"];
@@ -39,10 +40,26 @@ class eController{
         }
     }
 }
+
+
 }
 
-    public static function scheduleNextVisit($date, $noOfDays){
+    public static function scheduleNextVisit($date, $userID){
         
+            foreach ($_SESSION["korisnici"] as $kor) {
+                if ($kor->getiD() == $userID) {
+                    $to = $kor->getEmail();
+                }
+            }
+            $subject = "Kontrola";
+            $message = "Kontrola zdravlja vašeg ljubimca je zakazana za " . $date . ".";
+
+            $result = mail($to, $subject, $message);
+            if($result == true){
+                echo "Mejl je uspešno poslat klijentu.";
+            } else {
+                "Mejl nije poslat.";
+            }
     }
 
 }

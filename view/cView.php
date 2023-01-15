@@ -50,6 +50,7 @@ for ($i = 0; $i < count($visits); $i++){
             </thead>
             <tbody>
                 <?php
+
                     foreach($myVisits as $mv):
                 ?>
                 <tr>
@@ -60,7 +61,8 @@ for ($i = 0; $i < count($visits); $i++){
                 <?php endforeach; ?>
             </tbody>
         </table>
-    </div>
+        <br>
+      </div>
     
 </body>
 </html>
